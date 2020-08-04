@@ -5,10 +5,15 @@ require 'ostruct'
 require 'date'
 
 
-require 'bundler/setup'
+require 'bundler/setup' #requiring bundler
 Bundler.require
 
+#establishing database connection
+ActiveRecord::Base.establish_connection(
+    :adapter => "sqlite3",
+    :database => "db/artists.sqlite"
+  )
 
-# put the code to connect to the database here
+require_relative "../artist.rb" #artist.rb file is read
 
-require_relative "../artist.rb"
+
