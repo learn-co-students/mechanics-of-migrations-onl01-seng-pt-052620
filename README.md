@@ -1,5 +1,25 @@
 # Let's Learn About Migrations
 
+
+
+
+
+#The primary key is generated and auto-incremented for us. 
+
+If you get an error when trying to run rake commands, 
+you may have a newer version of rake already installed compared to this lesson, causing a conflict. 
+    
+#To avoid this error, run `bundle exec rake -T`.     
+    #Adding bundle exec indicates that you want rake to run within the context of this lesson's bundle (defined in the Gemfile), not the default version of rake you have installed globally on your computer.
+
+# The commands listed when running rake -T are made available as Rake tasks through require 'sinatra/activerecord/rake'.
+
+
+
+
+
+
+
 ## Objective
 
 1. Create, connect to, and manipulate a SQLite database using ActiveRecord.
