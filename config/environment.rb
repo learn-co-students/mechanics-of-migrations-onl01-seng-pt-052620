@@ -8,6 +8,11 @@ require 'date'
 require 'bundler/setup'
 Bundler.require
 
+
+ActiveRecord::Base.establish_connection(
+    :adapter => "sqlite3",
+    :database => "db/artists.sqlite"
+)
 sql = <<-SQL
   CREATE TABLE IF NOT EXISTS artists (
   id INTEGER PRIMARY KEY,
@@ -19,9 +24,4 @@ sql = <<-SQL
 SQL
  
 ActiveRecord::Base.connection.execute(sql)
-ActiveRecord::Base.establish_connection(
-    :adapter => "sqlite3",
-    :database => "db/artists.sqlite"
-)
-
 require_relative "../artist.rb"
